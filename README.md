@@ -56,21 +56,22 @@ The **ultimate goal of the project** is to <u>gain insights from the data sets a
 <br>
 
 ### Part II - KMeans Clustering
+Used the Elbow method to identify the most optimal k: **2**
 
+>    ![Elbow Method](./images/Kmeans_Cluster.png)
 <br>
 
 ### Part III - Hierarchical Clustering 
+I used **ward** method and **euclidean** distance. It appears that there's 2 main clusters, but I decided, maybe it could be 4. And so, I clustered the data using distance threshold of **20**.
 
+>   ![Heirarchical Clustering](./images/Heirarchical_Cluster.png)
 <br>
 
 ### Part IV - PCA
+I initially added 7 more features, and looking at this chart below (along with inspecting the explained and cumulative variance)... It didn't add that much after all.
+
+>   ![Explained Variance by PCs](./images/Explained_Variance.png)
 
 <br>
 
-## Results
-# CHECK !!!
-
-<br>
-
-## Summary
-# CHECK !!!
+# Summary:
