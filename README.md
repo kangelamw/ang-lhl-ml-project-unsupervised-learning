@@ -74,7 +74,7 @@ The **ultimate goal of the project** is to <u>gain insights from the data sets a
 
 10. The data was checked for skewness and **log transformation** was applied.
 
-11. Since we're using distance-based models, which are sensitive to values of different scales... I used `StandardScaler` to standardize the data.
+11. Since we're using distance-based models which are sensitive to values of different scales... I used `StandardScaler` to standardize the data.
 
 <br>
 
@@ -82,7 +82,12 @@ The **ultimate goal of the project** is to <u>gain insights from the data sets a
 1. Used the Elbow method to identify the most optimal k: **2**
 
     > ![Elbow Method](./images/Kmeans_Cluster.png)
-2. We've identified 2 clusters. Below are the distributions per Channel and Region.
+
+2. Used Silhouette Score to validate cluster quality. There's a second spike at 7, but 2 seemed the most optimal.
+    
+    > ![Silhouette Method](./images/Silhouette_Analysis.png)
+
+3. We've identified 2 clusters. Below are the distributions per Channel and Region.
     > ![Channels by Cluster](/images/Channel_Distribution.png)
     > ![Regions by Cluster](/images/Region_Distribution.png)
 
@@ -101,10 +106,15 @@ The **ultimate goal of the project** is to <u>gain insights from the data sets a
 <br>
 
 ### Part IV - PCA
-I initially added 7 more features, and looking at this chart below (along with inspecting the explained and cumulative variance)... It didn't add that much after all, and so those were removed and the tests were re-run without them.
+1. I initially added 7 more features, and looking at this chart below (along with inspecting the explained and cumulative variance)... It didn't add that much after all, and so those were removed and the tests were re-run without them.
 
->   ![Explained Variance by PCs](./images/Explained_Variance.png)
-##### You can check out the old PCA's result [here](/images/Explained_Variance_Old.png).
+    >   ![Explained Variance by PCs](./images/Explained_Variance.png)
+    ##### You can check out the old PCA's result [here](/images/Explained_Variance_Old.png).
+
+2. The clusters are not as well-separated as I expected. As you can see below, K-Means seems to have done the best clustering where the data points seem to have been neatly separated.
+
+    >   ![K-Means](./images/PCA_KMeans.png)
+    >   ![Heirarchical Clustering](./images/PCA_Heirarchicals.png)
 
 <br>
 
