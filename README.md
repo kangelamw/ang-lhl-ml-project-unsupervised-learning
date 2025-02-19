@@ -38,36 +38,43 @@ The **ultimate goal of the project** is to <u>gain insights from the data sets a
 │   ├── // Image files are here //
 ├── README.md
 ├── Unsupervised Learning - Project.ipynb
+├── functions.py
 ```
 
 
 ## Process
 ### Part I : EDA - Exploratory Data Analysis & Pre-processing
 1. I found no null values or duplicates.
-2. The min values of the continuous columns seem extremely low compared to its max. There may be outliers, and as shown below, the data is right-skewed.
+2. The nominal features (Channel and Region) were converted to `int8`. The rest of the features (continuous) remained `int64`. This allowed for easier segmentation of data as I could just select *int64/float64* and I know I have all the continuous variables I need.
+3. The min values of the continuous columns seem extremely low compared to its max. There may be outliers, and as shown below, the data is right-skewed.
 
     > ![Original Distributions of Purchases](./images/Orig_Distributions.png)
 
-3. The columns were checked for skewness and were log transformed. Below, is the new distribution.
+4. The columns were checked for skewness and were log transformed. Below, is the new distribution.
 
     > ![Transformed Distributions of Purchases](./images/Log_Distributions.png)
 
-4. **Grocery** purchasing appear to be positively correlated to **Detergents_Paper** and  **Milk** purchases. You can check out the correlation heatmap [here](/images/Correlation_Heatmap.png).
+5. **Grocery** purchasing appear to be positively correlated to **Detergents_Paper** and  **Milk** purchases. You can check out the original correlation heatmap [here](/images/Correlation_Heatmap.png).
 
     > ![Pairwise Scatterplot](./images/Pairwise_Scatter_Plots.png)
 
-5. For outliers, I removed rows that had multiple outliers (> 1 per row) and implemented a cap for min-max values for the rest of the outliers.
+6. For outliers, I removed rows that had multiple outliers (> 1 per row) and implemented a cap for min-max values for the rest of the outliers:
+
     > ![Outliers Boxplot](./images/Boxplots.png)
 
-6. Verified the suspected correlations using a heatmap. These correlations shown, although slightly less compared to before the outliers were removed, are still present.
+7. Verified the suspected correlations using a heatmap. These correlations shown, although slightly less compared to [before](/images/Correlation_Heatmap.png) the outliers were removed, are still present.
 
     > ![Correlation Heatmap](./images/Correlation_Heatmap_2.png)
 
-7. For feature selection, I initially added a few new columns `Total_Purchases`, and Purchase Ratios for each continuous variable. The pairwise plot (if you want to see,) is [here](./images/Pairwise_Scatter_Plots_NEW.png). The old correlation heatmap is shown below.
+8. For feature selection, I initially added a few new columns `Total_Purchases`, and Purchase Ratios for each continuous variable. The pairwise plot (if you want to see,) is [here](./images/Pairwise_Scatter_Plots_NEW.png). The old correlation heatmap is shown below.
     > ![Correlation Heatmap with Ratios](./images/Correlation_Heatmap_NEW.png)
 
-8. I decided to remove such features and merged Grocery with Detergents_Paper instead. It's now called `Household_Items`. The new correlation heatmap is shown below.
+9. I decided to remove such features and merged Grocery with Detergents_Paper instead. It's now called `Household_Items`. The new correlation heatmap is shown below.
     > ![New Correlation Heatmap](/images/Correlation_Heatmap_NEW_Features.png)
+
+10. The data was checked for skewness and **log transformation** was applied.
+
+11. Since we're using distance-based models, which are sensitive to values of different scales... I used `StandardScaler` to standardize the data.
 
 <br>
 
