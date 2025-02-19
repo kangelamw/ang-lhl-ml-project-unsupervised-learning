@@ -120,9 +120,9 @@ The **ultimate goal of the project** is to <u>gain insights from the data sets a
 
 # Summary
 ### Findings...
-1. Clusters who spend the most on Fresh and Frozen products tend to spend less on other product categories... and Clusters who spend the most on Household Items were generally the biggest spenders (our best customers).
-    > The key point is, if they spend more on Fresh/Frozen, they're likely spending less on the rest of the categories and vice versa.
-2. The clusters who spent the most on Household_Items (Grocery and Detergents_Paper) were our biggest customers and majority of them are in Channel 1 (Hotels, Restaurants, Cafes)
+1. Cluster B... who spend the most on Fresh and Frozen products tend to spend less on other product categories, and Cluster A... who spend the most on Household Items were generally the biggest spenders (our best customers).
+    > The key point is, if they spend more on Fresh/Frozen, they're likely spending less on the rest of the categories, and are among the group who spends less overall.
+2. Cluster A spent the most on Household_Items (Grocery and Detergents_Paper) and Milk were our biggest customers and majority of them are in Channel 1 (Hotels, Restaurants, Cafes)
 3. Across all clusters, our most bought products are Fresh products followed by Household Items and our least performing products were Deli and Frozen products.
 4. It can be said that there's not a lot of difference between the purchasing habits of all clusters in terms of monetary units. Meaning, they all spend about the same amount of money on us annually, just towards different product types.
 
