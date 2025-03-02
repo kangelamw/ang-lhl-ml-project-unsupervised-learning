@@ -143,3 +143,6 @@ The **ultimate goal of the project** is to <u>gain insights from the data sets a
     > Leverage the clustering and purchase behavior data to predict CLTV. We can use this information to focus retention efforts on high-value customers, improving customer engagement and satisfaction.
 
 ### Check out the notebook [here](/Unsupervised%20Learning%20-%20Project.ipynb) to read more about the findings, the process and how it was performed.
+
+### Grade
+![](./images/ml_unsupervised.png)
